@@ -9,7 +9,7 @@ struct Person {
 char* linear_search(struct Person people[], int size, char target_name[]);
 
 int main(void){
-    struct Person people[2];
+    struct Person people[8];
 
     strcpy(people[0].name, "Jon Snow");
     strcpy(people[0].number, "00-9938-393");
