@@ -1,3 +1,5 @@
+/* C program to demonstrate differences between floats and doubles. */
+
 #include <stdio.h>
 
 int main(void){
