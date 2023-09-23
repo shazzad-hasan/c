@@ -36,7 +36,7 @@ int main(void){
 
     // clear the input buffer
     while((c = getchar()) != '\n' && (c != EOF));
-    
+
     /* Read in an string */
     printf("Enter a string: ");
     fgets(s2, sizeof(s2), stdin);
