@@ -1,3 +1,5 @@
+/* C program to demonstrate basics of structs */
+
 #include <stdio.h>
 #include <string.h>
 
