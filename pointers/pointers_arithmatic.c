@@ -1,3 +1,5 @@
+/* C program to demonstrate pointer arithmatic */
+
 #include <stdio.h>
 
 int main(){

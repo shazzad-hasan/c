@@ -1,3 +1,5 @@
+/* C program to demonstrate how to compare two strings */
+
 #include <stdio.h>
 #include <string.h>
 
@@ -10,12 +12,8 @@ int main(){
     printf("Enter second string: ");
     fgets(s2, sizeof(s2), stdin);
 
-    // compare two memory address, it will always print different
-    if (s1 == s2){
-        printf("Same\n");
-    } else {
-        printf("Different\n");
-    }
+    /* comparing like s2 == s1 will encounter compilation error
+     because this compare two memory addresses, rather than the actual string contents */
 
     // compare the content of the strings
     if (strcmp(s1, s2) == 0){

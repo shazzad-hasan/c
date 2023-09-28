@@ -1,4 +1,4 @@
-/* C program to demonstrate pointer*/
+/* C program to demonstrate pointer */
 
 #include <stdio.h>
 
