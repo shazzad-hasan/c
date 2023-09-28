@@ -9,9 +9,14 @@ int main(){
     printf("Enter a string in lowercase letters: ");
     fgets(s1, sizeof(s1), stdin);
 
-    char *s2 = malloc(strlen(s1));
+    int lenS1 = strlen(s1);
 
-    for (int i = 0; i < strlen(s1); i++){
+    char *s2 = malloc(lenS1);
+    if (s2 == NULL){
+        return 1;
+    }
+
+    for (int i = 0; i < lenS1; i++){
         s2[i] = s1[i];
     }
 
@@ -27,6 +32,7 @@ int main(){
     printf("s1 after capitalising s2: %s", s1);
     printf("s2 after capitalising s2: %s", s2);
 
+    free(s2);
 
     return 0;
 }
