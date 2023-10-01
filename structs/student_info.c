@@ -1,5 +1,5 @@
-/* C program that prompts the user for the names and houses of some students
-and then prints out the informatios.
+/* C program that prompts the user for the names and ages of some students
+and then prints out the provided informatios.
 */
 
 #include <stdio.h>
@@ -7,13 +7,14 @@ and then prints out the informatios.
 
 struct student{
     char name[30];
-    char house[30];
+    int age;
 };
 
-const int MAX_NUM_STUDENT = 20;
+const int MAX_CLASS_SIZE = 20;
 
 int main(){
     int numOfStudent;
+    struct student students[MAX_CLASS_SIZE];
 
     printf("Enter number of students: ");
     scanf("%d", &numOfStudent);
@@ -21,20 +22,23 @@ int main(){
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 
-    struct student students[numOfStudent];
-
     for (int i = 0; i < numOfStudent; i++){
         printf("Name: ");
         fgets(students[i].name, sizeof(students[i].name), stdin);
 
-        printf("House: ");
-        fgets(students[i].house, sizeof(students[i].house), stdin);
-        
+        printf("Age: ");
+        scanf("%d", &students[i].age);   
+
+        // Consume the newline character left in the buffer by scanf
+        while ((c = getchar()) != '\n' && c != EOF);
+
+        // Remove the newline character from the name
+        // students[i].name[strcspn(students[i].name, "\n")] = 0;      
     }
 
     for (int i = 0; i < numOfStudent; i++){
         students[i].name[strcspn(students[i].name, "\n")] = 0;
-        printf("Name: %s, House: %s\n", students[i].name, students[i].house);
+        printf("%s \t %d\n", students[i].name, students[i].age);
     }
  
     return 0;
